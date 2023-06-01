@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "X9D379G5H4.com.tryoncloth.stylespace",
+        "paths": [
+          "*", "/"
+        ]
+      }
+    ]
+  }
+}
