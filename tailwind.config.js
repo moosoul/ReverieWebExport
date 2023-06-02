@@ -6,6 +6,10 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    spacing: Array.from({ length: 1000 }).reduce((map, _, index) => {
+      map[index] = `${index}px`
+      return map
+    }, {}),
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
