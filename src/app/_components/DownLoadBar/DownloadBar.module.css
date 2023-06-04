@@ -1,0 +1,21 @@
+.colored_text {
+  font-family: 'Goldman';
+  font-style: normal;
+  font-weight: 400;
+  /* identical to box height */
+
+  text-align: right;
+
+  /* Main gradient */
+
+  background: linear-gradient(
+    330.59deg,
+    #00e7ff 6.87%,
+    #fd60ca 48.94%,
+    #fdb600 84.35%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}

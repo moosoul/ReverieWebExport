@@ -14,7 +14,7 @@
 
   // set 1rem = viewWidth / 10
   function setRemUnit() {
-    if (window.document.documentElement.clientWidth > 600) {
+    if (window.document.documentElement.clientWidth > 768) {
       window.document.documentElement.style.fontSize = '37.5px'
     } else {
       var rem = docEl.clientWidth / 10
