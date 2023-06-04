@@ -1,8 +1,9 @@
-import BackIcon from './assets/backIcon.svg'
-import Image from 'next/image'
-export default function BuyNowButton() {
+export default function BuyNowButton(props: { url: string }) {
   return (
     <div
+      onClick={() => {
+        window.open(props.url, '_blank')
+      }}
       style={{
         borderImage: 'linear-gradient(to bottom, #b4b4b9, #3b3b40) 1',
       }}
