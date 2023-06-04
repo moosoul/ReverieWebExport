@@ -16,7 +16,7 @@ export default function DownLoadBar(props: DownLoadBarProps) {
         'download-bar',
         'w-full h-55 md:h-115 flex items-center px-32 justify-between',
         props.colored
-          ? 'bg-[linear-gradient(330.59deg,#00e7ff_6.87%,#fd60ca_48.94%,#fdb600_84.35%)]'
+          ? 'bg-[linear-gradient(351.59deg,#00e7ff_6.87%,#fd60ca_48.94%,#fdb600_84.35%)]'
           : 'bg-[#252525]'
       )}
     >

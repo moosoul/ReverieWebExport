@@ -12,8 +12,8 @@ type PostPageProps = {
 
 export default async function PostPage(props: PostPageProps) {
   const { pid } = props.params
-
   const { post } = await postService.getPostInfos(pid)
+
   return (
     <div>
       <DownLoadBar colored />
