@@ -25,10 +25,10 @@ export default async function UserProfile(props: UserProfileProps) {
       <div className="profile-infos px-32">
         <div className="user-infos w-full flex justify-between">
           <div className="circle-avatar w-120 relative top-[-60px]">
-            <div className="border-[2px] border-solid border-[#cfd1d4] rounded-full">
+            <div className="border-[2px] w-118 h-118 border-solid border-[#cfd1d4] rounded-full">
               <img
                 src={profile.profile_url}
-                className="w-116 h-116 border-[3px] border-solid border-[#E4E7EF] rounded-full"
+                className="w-full h-full border-[3px] border-solid border-[#E4E7EF] rounded-full"
                 alt="user profile img"
               />
             </div>
