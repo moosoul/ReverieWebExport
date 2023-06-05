@@ -1,6 +1,6 @@
-import AppleLogoImg from './assets/appleLogo.png'
+import AppleLogoImg from './assets/AppleLogo.png'
 import Image from 'next/image'
-import DownloadBarStyle from './DownLoadBar.module.css'
+import DownloadBarStyle from './DownloadBar.module.css'
 import classNames from 'classnames'
 
 type DownLoadBarProps = {
