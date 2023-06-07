@@ -20,7 +20,7 @@ export default function PostCard(props: {
           className="w-full h-206 lg:h-731 border-[1px] border-solid border-[#525358] shadow-[0px_0px_1px_1px_#00000040] lg:shadow-[0px_0px_4px_4px_#00000040] object-cover object-left"
           src={props.src ? withS3Prefix(props.src) : TRANSPARENT_IMAGE}
         />
-        <p className="text-[#434348] text-[10px] leading-[12px] mt-2 ml-2 overflow-hidden whitespace-nowrap text-ellipsis">
+        <p className="text-[#434348] text-[10px] leading-[12px] lg:text-[20px] lg:leading-[28px] lg:mt-14 mt-2 ml-2 overflow-hidden whitespace-nowrap text-ellipsis">
           {props.title}
         </p>
       </div>
