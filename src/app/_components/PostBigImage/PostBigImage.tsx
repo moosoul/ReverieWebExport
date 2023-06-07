@@ -3,6 +3,7 @@ import CommentIcon from '@components/Icons/CommentIcon'
 import RemixIcon from '@components/Icons/RemixIcon'
 import SizedImg from '@components/SizedImg/SizedImg'
 import classNames from 'classnames'
+import { TRANSPARENT_IMAGE } from '@consts/commonConsts'
 
 type PostBigImageProps = {
   src: string
@@ -24,8 +25,12 @@ export default function PostBigImage(props: PostBigImageProps) {
         <div className="w-302 h-400 m-4 shadow-[0px_0px_1px_1px_#00000040] absolute top-0 left-0"></div>
 
         <div className="w-full h-458 custom-scroll-bar-horizontal p-1 bg-transparent overflow-x-auto overflow-y-hidden relative">
-          <img alt="" className="w-full h-398" src={props.src} />
-          <SizedImg src={props.src} />
+          <img
+            alt=""
+            className="w-full h-398"
+            src={props.src || TRANSPARENT_IMAGE}
+          />
+          <SizedImg src={props.src || TRANSPARENT_IMAGE} />
         </div>
         <div
           className={classNames(

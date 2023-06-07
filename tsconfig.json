@@ -23,6 +23,7 @@
       "@components/*": ["./src/app/_components/*"],
       "@utils/*": ["./src/utils/*"],
       "@services/*": ["./src/services/*"],
+      "@consts/*": ["./src/consts/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "public/js/remFlexible.js"],

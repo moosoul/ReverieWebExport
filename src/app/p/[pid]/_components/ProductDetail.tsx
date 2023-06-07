@@ -27,7 +27,7 @@ export default function ProductDetail(props: PostPageProps) {
   return (
     <div
       className={classNames(
-        show ? 'translate-y-0' : 'translate-y-[100vh]',
+        show ? 'translate-x-0' : 'translate-x-[-100vw]',
         'transition-transform',
         'fixed h-[calc(100vh-55px)] top-55 left-0 bg-white'
       )}
