@@ -31,23 +31,25 @@ type ProductInfo = {
   url: string
 }
 
-export type PostInfoType = {
-  post: {
-    caption: any | null
-    comment_count: number
-    creator_profile: {
-      profile_url: string
-      user_id: string
-      username: string
-    }
-    like_count: number
-    preview_path: string
-    products: {
-      [key: string]: ProductInfo
-    }
-    published_time: number
-    remix_count: number
-    title: string
+export type PostType = {
+  caption: any | null
+  comment_count: number
+  creator_profile: {
+    profile_url: string
+    user_id: string
+    username: string
   }
+  like_count: number
+  preview_path: string
+  products: {
+    [key: string]: ProductInfo
+  }
+  published_time: number
+  remix_count: number
+  title: string
+}
+
+export type PostInfoType = {
+  post: PostType
   success: true
 }
