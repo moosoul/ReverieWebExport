@@ -39,7 +39,7 @@ export default function DownLoadBar(props: DownLoadBarProps) {
           className="w-129 h-32 lg:w-167 lg:h-47 pt-5 pl-12 bg-[#E4E7EF] border-solid border-[1px] lg:border-[1px] flex shadow-[inset_-1px_-1px_1px_0px_#00000060] lg:shadow-[inset_-1px_-1px_1px_0px_#00000060]"
         >
           <Image
-            className="w-16 h-19 scale-90 lg:scale-[none] lg:w-24 lg:h-28 shrink-0 lg:mt-2"
+            className="w-16 h-19 scale-90 lg:scale-[0.8] lg:w-24 lg:h-28 shrink-0 lg:mt-2"
             src={AppleLogoImg}
             alt="Apple logo"
           />
