@@ -18,7 +18,7 @@ export default function UserProfile(props: UserProfileProps) {
       <div className="w-full h-120 lg:h-205">
         <img
           src={profile.profile_background_url || TRANSPARENT_IMAGE}
-          className="w-full h-120 lg:h-205"
+          className="w-full h-120 lg:h-205 object-cover"
           alt="user profile background"
         />
       </div>
