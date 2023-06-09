@@ -6,6 +6,7 @@ import dayjs from 'dayjs'
 import ProductImage from './_components/ProductImage'
 import Link from 'next/link'
 import { PostType } from '@services/types/postPage.type'
+import { TRANSPARENT_IMAGE } from '@consts/commonConsts'
 type PostPageProps = {
   pid: string
   post: PostType
@@ -27,7 +28,7 @@ export default function PostPage(props: PostPageProps) {
 
         <div className="user-name-avatar flex lg:hidden justify-center items-center mb-16">
           <img
-            src={post.creator_profile.profile_url}
+            src={post.creator_profile.profile_url || TRANSPARENT_IMAGE}
             className="w-24 h-24 border-[2px] border-solid border-[#E4E7EF] rounded-full"
             alt="user profile img"
           />

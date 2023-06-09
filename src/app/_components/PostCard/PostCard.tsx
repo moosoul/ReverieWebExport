@@ -18,7 +18,9 @@ export default function PostCard(props: {
       >
         <img
           alt=""
-          className="w-full h-206 lg:h-731 border-[1px] border-solid border-[#525358] shadow-[0px_0px_1px_1px_#00000040] lg:shadow-[0px_0px_4px_4px_#00000040] object-cover object-left"
+          className="w-full h-206 lg:h-731 border-[1px] border-solid border-[#525358] shadow-[0px_0px_1px_1px_#00000040] lg:shadow-[0px_0px_4px_4px_#00000040] object-cover object-left
+          bg-[linear-gradient(360deg,#B2B6C2_-3.63%,#E3E4E8_27.65%,#E8E8E8_37.48%,#E3E4E8_55.8%,#CACCD2_78.59%,#B4B8C0_107.19%)]
+          "
           src={props.src ? withS3Prefix(props.src) : TRANSPARENT_IMAGE}
         />
         <p className="text-[#434348] text-[10px] leading-[12px] lg:text-[20px] lg:leading-[28px] lg:mt-14 mt-2 ml-2 overflow-hidden whitespace-nowrap text-ellipsis">

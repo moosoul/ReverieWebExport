@@ -18,7 +18,7 @@ export default function UserProfile(props: UserProfileProps) {
       <div className="w-full h-120 lg:h-205">
         <img
           src={profile.profile_background_url || TRANSPARENT_IMAGE}
-          className="w-full h-120 lg:h-205 object-cover"
+          className="w-full h-120 lg:h-205 object-cover bg-[linear-gradient(360deg,#B2B6C2_-3.63%,#E3E4E8_27.65%,#E8E8E8_37.48%,#E3E4E8_55.8%,#CACCD2_78.59%,#B4B8C0_107.19%)]"
           alt="user profile background"
         />
       </div>
