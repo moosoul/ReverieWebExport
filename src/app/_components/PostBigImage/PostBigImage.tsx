@@ -11,7 +11,6 @@ type PostBigImageProps = {
   commentCount: number
   remixCount: number
   dateStr: string
-  showPopupFunc: () => void
 }
 export default function PostBigImage(props: PostBigImageProps) {
   return (
@@ -39,7 +38,7 @@ export default function PostBigImage(props: PostBigImageProps) {
             'absolute left-0 top-414 w-300 lg:w-478 lg:top-675'
           )}
         >
-          <div onClick={props.showPopupFunc} className="flex">
+          <div className="flex">
             <div className="flex">
               <LikeIcon />
               <p className="ml-8 lg:ml-13">{props.likeCount}</p>
@@ -53,7 +52,7 @@ export default function PostBigImage(props: PostBigImageProps) {
               <p className="ml-8 lg:ml-13">{props.remixCount}</p>
             </div>
           </div>
-          <div onClick={props.showPopupFunc}>
+          <div>
             <p>{props.dateStr}</p>
           </div>
         </div>

@@ -1,16 +1,11 @@
-'use client'
-
 import DownLoadBar from '@components/DownLoadBar/DownLoadBar'
 import BackButton from '@components/BackButton/BackButton'
 import PostBigImage from '@components/PostBigImage/PostBigImage'
-import postService from '@services/postPage.service'
 import withS3Prefix from '@utils/withS3Prefix'
 import dayjs from 'dayjs'
 import ProductImage from './_components/ProductImage'
 import Link from 'next/link'
 import { PostType } from '@services/types/postPage.type'
-import { useState } from 'react'
-import renderPopup from '@utils/renderRedirectPopup'
 type PostPageProps = {
   pid: string
   post: PostType
@@ -18,19 +13,10 @@ type PostPageProps = {
 // await postService.getPostInfos(pid)
 export default function PostPage(props: PostPageProps) {
   const { pid, post } = props
-  const [showPopup, setShowPopup] = useState(false)
 
-  const redirectToApp = () => {
-    setTimeout(function () {
-      window.location.href = 'https://apps.apple.com/app/reverie/id1535818149'
-    }, 200)
-    window.location.href = 'com.reverie://post?id=' + pid
-  }
-  const showPopupFunc = () => setShowPopup(true)
   return (
     <div>
-      {renderPopup(showPopup, () => setShowPopup(false), redirectToApp)}
-      <DownLoadBar colored />
+      <DownLoadBar redirect={'com.reverie://post?id=' + pid} colored />
       <div className="post-detail pt-24 px-40 lg:flex lg:px-40 lg:pt-40">
         <Link
           className="lg:mr-60 w-24 h-24 lg:w-48 lg:h-48 block"
@@ -39,10 +25,7 @@ export default function PostPage(props: PostPageProps) {
           <BackButton />
         </Link>
 
-        <div
-          onClick={showPopupFunc}
-          className="user-name-avatar flex lg:hidden justify-center items-center mb-16"
-        >
+        <div className="user-name-avatar flex lg:hidden justify-center items-center mb-16">
           <img
             src={post.creator_profile.profile_url}
             className="w-24 h-24 border-[2px] border-solid border-[#E4E7EF] rounded-full"
@@ -55,7 +38,6 @@ export default function PostPage(props: PostPageProps) {
         </div>
 
         <PostBigImage
-          showPopupFunc={showPopupFunc}
           src={withS3Prefix(post.preview_path)}
           likeCount={post.like_count}
           commentCount={post.comment_count}

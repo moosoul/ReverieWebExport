@@ -1,3 +1,4 @@
+'use client'
 import AppleLogoImg from './assets/AppleLogo.png'
 import Image from 'next/image'
 import DownloadBarStyle from './DownloadBar.module.css'
@@ -5,14 +6,23 @@ import classNames from 'classnames'
 
 type DownLoadBarProps = {
   colored?: boolean
+  redirect: string
 }
 
 export default function DownLoadBar(props: DownLoadBarProps) {
+  const redirectToApp = () => {
+    setTimeout(function () {
+      window.location.href = 'https://apps.apple.com/app/reverie/id1535818149'
+    }, 200)
+    window.location.href = props.redirect
+  }
+
   return (
     <div className="w-full h-55 lg:h-113">
-      <a
-        target="_blank"
-        href="https://apps.apple.com/app/reverie/id1535818149"
+      <div
+        onClick={redirectToApp}
+        // target="_blank"
+        // href="https://apps.apple.com/app/reverie/id1535818149"
         className={classNames(
           'download-bar',
           'w-full h-55 lg:h-113 flex items-center px-32 justify-between',
@@ -48,7 +58,7 @@ export default function DownLoadBar(props: DownLoadBarProps) {
         >
           REVERIE
         </p>
-      </a>
+      </div>
     </div>
   )
 }
