@@ -14,7 +14,7 @@ export default function PostCard(props: {
         style={{
           borderImage: 'linear-gradient(135deg, #b4b4b9, #3b3b40) 1',
         }}
-        className="w-160 h-225 lg:w-567 lg:h-798 border-solid border-[1px] lg:border-[2px] lg:p-9 bg-[#E4E7EF] p-2 mb-9 lg:mb-18 shrink-0"
+        className="w-159 h-225 lg:w-567 lg:h-798 border-solid border-[1px] lg:border-[2px] lg:p-9 bg-[#E4E7EF] p-2 mb-9 lg:mb-18 shrink-0"
       >
         <img
           alt=""

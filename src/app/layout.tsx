@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="hairlines" style={{ fontSize: '39px' }}>
       <head>
-        <Script async={false} src="/js/remFlexible.js" />
+        <script async={false} src="/js/remFlexible.js" />
       </head>
       <body style={{ fontFamily: 'Goldman' }}>{children}</body>
     </html>
