@@ -7,10 +7,20 @@ const getProfile = (userId: string) => {
   })
 }
 
-const getPostLists = (userId: string) => {
+const getPostLists = (
+  userId: string,
+  params: {
+    page: number
+    page_size: number
+  } = {
+    page: 0,
+    page_size: 10,
+  }
+) => {
   return get<PostListInfoType>(`/get_posts`, {
     user_id: userId,
-    page: 0,
+    page: params.page,
+    page_size: params.page_size,
   })
 }
 

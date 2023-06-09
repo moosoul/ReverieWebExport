@@ -1,3 +1,4 @@
+'use client'
 import { TRANSPARENT_IMAGE } from '@consts/commonConsts'
 import withS3Prefix from '@utils/withS3Prefix'
 import Link from 'next/link'

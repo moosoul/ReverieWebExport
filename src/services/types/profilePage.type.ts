@@ -20,10 +20,12 @@ export type ProfileInfoType = {
   success: true
 }
 
+export type PostInfoType = {
+  id: string
+  preview_path: string
+  title: string
+}
+
 export type PostListInfoType = {
-  stories: {
-    id: string
-    preview_path: string
-    title: string
-  }[]
+  stories: PostInfoType[]
 }

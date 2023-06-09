@@ -1,5 +1,5 @@
 import DownLoadBar from '@components/DownLoadBar/DownLoadBar'
-import PostCard from '@components/PostCard/PostCard'
+import PostCardList from '@components/PostCardList/PostCardList'
 import { TRANSPARENT_IMAGE } from '@consts/commonConsts'
 import profileService from '@services/profile.service'
 type UserProfileProps = {
@@ -9,10 +9,7 @@ type UserProfileProps = {
 export default async function UserProfile(props: UserProfileProps) {
   const { uid } = props.params
 
-  const [{ profile }, { stories }] = await Promise.all([
-    profileService.getProfile(uid),
-    profileService.getPostLists(uid),
-  ])
+  const { profile } = await profileService.getProfile(uid)
   return (
     <div>
       <DownLoadBar />
@@ -60,16 +57,8 @@ export default async function UserProfile(props: UserProfileProps) {
           </div>
         </div>
       </div>
-      <div className="post-list px-32 flex justify-between flex-wrap lg:px-0 lg:w-[1154px] m-auto">
-        {stories.map((story) => (
-          <PostCard
-            key={story.id}
-            id={story.id}
-            title={story.title}
-            src={story.preview_path}
-          />
-        ))}
-      </div>
+
+      <PostCardList uid={uid} />
     </div>
   )
 }
