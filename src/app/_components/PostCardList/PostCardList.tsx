@@ -37,7 +37,7 @@ export default function PostCardList(props: { uid: string }) {
 
   return (
     <>
-      <div className="post-list px-32 flex justify-between flex-wrap lg:px-0 lg:w-[1154px] m-auto">
+      <div className="post-list px-32 flex justify-between flex-wrap lg:px-0 lg:w-[918px] m-auto">
         {stories.map((story) => (
           <PostCard
             key={story.id}

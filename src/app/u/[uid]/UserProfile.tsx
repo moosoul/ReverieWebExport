@@ -23,7 +23,7 @@ export default function UserProfile(props: UserProfileProps) {
         />
       </div>
       <div className="profile-infos px-32 lg:px-0 lg:w-[1154px] m-auto">
-        <div className="user-infos w-full flex justify-between lg:justify-start">
+        <div className="user-infos w-full flex justify-between lg:justify-start lg:h-304 h-132">
           <div className="circle-avatar w-120 lg:w-280 relative top-[-60px] lg:top-[-140px]">
             <div className="border-[2px] w-118 h-118 lg:w-280 lg:h-280 lg:border-[10px] border-solid border-[#cfd1d4] lg:border-[#E4E7EF] rounded-full">
               <img

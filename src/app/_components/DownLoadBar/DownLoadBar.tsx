@@ -18,14 +18,14 @@ export default function DownLoadBar(props: DownLoadBarProps) {
   }
 
   return (
-    <div className="w-full h-55 lg:h-113">
+    <div className="w-full h-55 lg:h-110">
       <div
         onClick={redirectToApp}
         // target="_blank"
         // href="https://apps.apple.com/app/reverie/id1535818149"
         className={classNames(
           'download-bar',
-          'w-full h-55 lg:h-113 flex items-center px-32 justify-between',
+          'w-full h-55 lg:h-110 flex items-center px-32 justify-between',
           'fixed top-0 left-0 z-[100]',
           props.colored
             ? 'bg-[linear-gradient(351.59deg,#00e7ff_6.87%,#fd60ca_48.94%,#fdb600_84.35%)]'
