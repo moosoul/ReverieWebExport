@@ -66,7 +66,7 @@ export default function PostPage(props: PostPageProps) {
               {post.caption}
             </p>
           </div>
-          <div className="pt-32 pb-42 lg:pt-124">
+          <div className="pt-32 pb-42 lg:pt-30">
             <p className="product-in-post text-[10px] leading-[12px] lg:text-[15px] lg:leading-[18px] font-bold">
               Products in this post
             </p>

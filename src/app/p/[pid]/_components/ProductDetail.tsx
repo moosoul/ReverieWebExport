@@ -38,7 +38,7 @@ export default function ProductDetail(props: PostPageProps) {
       className={classNames(
         show ? 'translate-x-0' : 'translate-x-[-100vw]',
         'transition-transform',
-        'fixed h-[calc(100vh-55px)] lg:h-[calc(100vh-113px)] top-55 lg:top-113 left-0 bg-white lg:w-full'
+        'fixed h-[calc(100vh-55px)] lg:h-[calc(100vh-110px)] top-55 lg:top-110 left-0 bg-white lg:w-full'
       )}
     >
       <div className="product-detail pt-24 px-40 lg:pt-40 lg:px-40">
@@ -65,11 +65,11 @@ export default function ProductDetail(props: PostPageProps) {
               className="w-287 h-372 lg:w-474 lg:h-615"
             />
           </div>
-          <div className="mt-48 lg:mt-140 text-[#434348] px-8 lg:px-64">
+          <div className="mt-48 lg:mt-50 text-[#434348] px-8 lg:px-64">
             <p className="product-title text-[16px] leading-[19px] lg:text-[32px] lg:leading-[38px] font-bold">
               {nameInner}
             </p>
-            <div className="product-infos mt-16 text-[12px] leading-[14px] lg:mt-32 lg:text-[20px] lg:leading-[24px] lg:h-312">
+            <div className="product-infos mt-16 text-[12px] leading-[14px] lg:mt-32 lg:text-[20px] lg:leading-[24px] lg:h-238">
               <p className="product-content font-bold">{descriptionInner}</p>
               <p className="product-price mt-8 lg:mt-16">{priceInner}$</p>
             </div>
