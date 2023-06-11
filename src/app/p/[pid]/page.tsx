@@ -1,6 +1,7 @@
 import postService from '@services/postPage.service'
 import { Metadata, ResolvingMetadata } from 'next'
 import PostPage from './PostPage'
+import PostDataTrackCom from './_components/PostDataTrackCom'
 type PostPageProps = {
   params: { pid: string }
 }
@@ -45,5 +46,10 @@ export default async function PostPageWrapper(props: PostPageProps) {
   const { pid } = props.params
   const { post } = await postService.getPostInfos(pid)
 
-  return <PostPage pid={pid} post={post} />
+  return (
+    <>
+      <PostDataTrackCom pid={pid} />
+      <PostPage pid={pid} post={post} />
+    </>
+  )
 }
