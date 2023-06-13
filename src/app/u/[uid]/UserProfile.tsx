@@ -33,8 +33,8 @@ export default function UserProfile(props: UserProfileProps) {
                 alt="user profile img"
               />
             </div>
-            <div className="likes-and-remixes-number text-center mt-12 lg:mt-[32px] flex text-[#434348] text-[15px] leading-[18px] font-bold lg:text-[32px] lg:leading-[38px]">
-              <div className="lg:ml-26 lg:mr-45 ml-10 mr-18">
+            <div className="likes-and-remixes-number text-center mt-12 lg:mt-[32px] flex justify-center lg:justify-start text-[#434348] text-[15px] leading-[18px] font-bold lg:text-[32px] lg:leading-[38px]">
+              <div className="lg:ml-26 lg:mr-45 ml-0 mr-18">
                 <p>{profile.like_count}</p>
                 <p className="text-[10px] leading-[12px] lg:text-[20px] lg:leading-[24px] font-normal">
                   Likes
@@ -50,7 +50,8 @@ export default function UserProfile(props: UserProfileProps) {
           </div>
           <div className="user-descriptions w-181 lg:w-753 lg:ml-120 lg:pt-60 pt-16">
             <p className="text-[16px] leading-[19px] lg:text-[48px] lg:leading-[57px] mb-12 lg:mb-[24px] tracking-[1px]">
-              @{profile.username}
+              <span className="font-bold">@</span>
+              {profile.username}
             </p>
             <div className="h-72 lg:h-90 overflow-y-auto custom-scroll-bar">
               <p className="text-[10px] leading-[12px] lg:text-[20px] lg:leading-[24px] w-159 lg:w-700">
