@@ -4,6 +4,7 @@ import PostPage from './PostPage'
 import PostDataTrackCom from './_components/PostDataTrackCom'
 type PostPageProps = {
   params: { pid: string }
+  searchParams: { type: string }
 }
 
 export async function generateMetadata({
@@ -44,12 +45,16 @@ export async function generateMetadata({
 
 export default async function PostPageWrapper(props: PostPageProps) {
   const { pid } = props.params
-  const { post } = await postService.getPostInfos(pid)
 
+  const { post } = await postService.getPostInfos(pid)
   return (
     <>
       <PostDataTrackCom pid={pid} />
-      <PostPage pid={pid} post={post} />
+      <PostPage
+        pid={pid}
+        post={post}
+        type={props.searchParams?.type || 'userid'}
+      />
     </>
   )
 }

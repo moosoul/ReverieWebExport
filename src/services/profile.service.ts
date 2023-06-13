@@ -24,8 +24,15 @@ const getPostLists = (
   })
 }
 
+const getUserIdByUserName = (username: string) => {
+  return get<{ user_id: string }>(`/get_userid`, {
+    username,
+  })
+}
+
 const profileService = {
   getProfile,
   getPostLists,
+  getUserIdByUserName,
 }
 export default profileService

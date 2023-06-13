@@ -10,6 +10,7 @@ import { TRANSPARENT_IMAGE } from '@consts/commonConsts'
 type PostPageProps = {
   pid: string
   post: PostType
+  type: string
 }
 // await postService.getPostInfos(pid)
 export default function PostPage(props: PostPageProps) {
@@ -21,7 +22,11 @@ export default function PostPage(props: PostPageProps) {
       <div className="post-detail pt-24 px-40 lg:flex lg:px-40 lg:pt-40">
         <Link
           className="lg:mr-60 w-24 h-24 lg:w-48 lg:h-48 block"
-          href={`/u/${post.creator_profile.user_id}`}
+          href={
+            props.type === 'userid'
+              ? `/u/${post.creator_profile.user_id}`
+              : `/un/${post.creator_profile.username}`
+          }
         >
           <BackButton />
         </Link>
@@ -62,7 +67,7 @@ export default function PostPage(props: PostPageProps) {
             <p className="post-title text-[16px] leading-[19px] lg:text-[32px] lg:leading-[38px] font-bold">
               {post.title}
             </p>
-            <p className="post-content mt-8 lg:mt-8 lg:h-200 text-[12px] leading-[14px] lg:text-[20px] lg:leading-[24px]">
+            <p className="post-content font-normal mt-8 lg:mt-8 lg:h-200 text-[12px] leading-[14px] lg:text-[20px] lg:leading-[24px]">
               {post.caption}
             </p>
           </div>
@@ -70,7 +75,7 @@ export default function PostPage(props: PostPageProps) {
             <p className="product-in-post text-[10px] leading-[12px] lg:text-[15px] lg:leading-[18px] font-bold">
               Products in this post
             </p>
-            <div className="product-list pt-16 lg:pt-24 w-350 lg:w-528 overflow-x-auto flex">
+            <div className="product-list custom-scroll-bar-horizontal pt-16 pb-10 lg:pt-24 w-350 lg:w-528 overflow-x-auto flex">
               {Object.keys(post.products).map((productKey) => {
                 const productTemp = post.products[productKey]
                 return (

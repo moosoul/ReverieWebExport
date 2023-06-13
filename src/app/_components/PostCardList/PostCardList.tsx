@@ -6,7 +6,10 @@ import profileService from '@services/profile.service'
 import { PostInfoType } from '@services/types/profilePage.type'
 import { useState } from 'react'
 
-export default function PostCardList(props: { uid: string }) {
+export default function PostCardList(props: {
+  uid: string
+  type: 'userid' | 'username'
+}) {
   const [stories, setStories] = useState<PostInfoType[]>([])
   const [loading, setLoading] = useState(false)
   const [page, setPage] = useState(0)
@@ -44,6 +47,7 @@ export default function PostCardList(props: { uid: string }) {
             id={story.id}
             title={story.title}
             src={story.preview_path}
+            type={props.type}
           />
         ))}
       </div>

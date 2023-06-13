@@ -1,17 +1,17 @@
 import profileService from '@services/profile.service'
-import UserProfile from './UserProfile'
 import { Metadata } from 'next'
-import UserDataTrackCom from './_components/UserDataTrackCom'
+import UserDataTrackCom from '../../u/[uid]/_components/UserDataTrackCom'
+import UserProfile from '../../u/[uid]/UserProfile'
 type UserProfileProps = {
-  params: { uid: string }
+  params: { unid: string }
 }
 
 export async function generateMetadata({
   params,
 }: UserProfileProps): Promise<Metadata> {
-  const { uid } = params
-
-  const { profile } = await profileService.getProfile(uid)
+  const { unid } = params
+  const { user_id } = await profileService.getUserIdByUserName(unid)
+  const { profile } = await profileService.getProfile(user_id)
 
   const username = profile.username
   return {
@@ -36,17 +36,16 @@ export async function generateMetadata({
 }
 
 export default async function UserProfilePage(props: UserProfileProps) {
-  const { uid } = props.params
+  const { unid } = props.params
 
-  const { profile } = await profileService.getProfile(uid)
+  const { user_id } = await profileService.getUserIdByUserName(unid)
 
-  const username = profile.username
-  const profile_preview = profile.profile_url
+  const { profile } = await profileService.getProfile(user_id)
 
   return (
     <>
-      <UserDataTrackCom uid={uid} />
-      <UserProfile type="userid" profile={profile} uid={uid} />
+      <UserDataTrackCom uid={user_id} />
+      <UserProfile type="username" profile={profile} uid={user_id} />
     </>
   )
 }

@@ -5,6 +5,7 @@ import { ProfileType } from '@services/types/profilePage.type'
 type UserProfileProps = {
   profile: ProfileType
   uid: string
+  type: 'userid' | 'username'
 }
 
 export default function UserProfile(props: UserProfileProps) {
@@ -24,7 +25,7 @@ export default function UserProfile(props: UserProfileProps) {
       </div>
       <div className="profile-infos px-32 lg:px-0 lg:w-[1154px] m-auto">
         <div className="user-infos w-full flex justify-between lg:justify-start lg:h-304 h-132">
-          <div className="circle-avatar w-120 lg:w-280 relative top-[-60px] lg:top-[-140px]">
+          <div className="circle-avatar w-120 lg:w-280 relative top-[-48px] lg:top-[-105px]">
             <div className="border-[2px] w-118 h-118 lg:w-280 lg:h-280 lg:border-[10px] border-solid border-[#cfd1d4] lg:border-[#E4E7EF] rounded-full">
               <img
                 src={profile.profile_url}
@@ -32,8 +33,8 @@ export default function UserProfile(props: UserProfileProps) {
                 alt="user profile img"
               />
             </div>
-            <div className="likes-and-remixes-number text-center mt-12 lg:mt-[32px] flex justify-between text-[#434348] text-[15px] leading-[18px] font-bold lg:text-[32px] lg:leading-[38px]">
-              <div>
+            <div className="likes-and-remixes-number text-center mt-12 lg:mt-[32px] flex text-[#434348] text-[15px] leading-[18px] font-bold lg:text-[32px] lg:leading-[38px]">
+              <div className="lg:ml-26 lg:mr-45 ml-10 mr-18">
                 <p>{profile.like_count}</p>
                 <p className="text-[10px] leading-[12px] lg:text-[20px] lg:leading-[24px] font-normal">
                   Likes
@@ -59,7 +60,7 @@ export default function UserProfile(props: UserProfileProps) {
           </div>
         </div>
       </div>
-      <PostCardList uid={uid} />
+      <PostCardList type={props.type} uid={uid} />
     </div>
   )
 }

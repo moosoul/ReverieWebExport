@@ -70,8 +70,10 @@ export default function ProductDetail(props: PostPageProps) {
               {nameInner}
             </p>
             <div className="product-infos mt-16 text-[12px] leading-[14px] lg:mt-32 lg:text-[20px] lg:leading-[24px] lg:h-238">
-              <p className="product-content font-bold">{descriptionInner}</p>
-              <p className="product-price mt-8 lg:mt-16">{priceInner}$</p>
+              <p className="product-content">{descriptionInner}</p>
+              <p className="product-price font-normal mt-8 lg:mt-16">
+                {priceInner}$
+              </p>
             </div>
             <div className="flex justify-end">
               <BuyNowButton url={urlInner} />
