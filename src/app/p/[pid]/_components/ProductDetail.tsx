@@ -33,6 +33,17 @@ export default function ProductDetail(props: PostPageProps) {
       clearTimeout(t)
     }
   }, [])
+
+  function milliFormat(p: number) {
+    const num = Number.parseFloat(`${p / 100}`).toFixed(2)
+
+    return (
+      num &&
+      num.toString().replace(/\d+/, function (s) {
+        return s.replace(/(\d)(?=(\d{3})+$)/g, '$1,')
+      })
+    )
+  }
   return (
     <div
       className={classNames(
@@ -72,7 +83,7 @@ export default function ProductDetail(props: PostPageProps) {
             <div className="product-infos mt-16 text-[12px] leading-[14px] lg:mt-32 lg:text-[20px] lg:leading-[24px] lg:h-238">
               <p className="product-content">{descriptionInner}</p>
               <p className="product-price font-normal mt-8 lg:mt-16">
-                {priceInner}$
+                ${milliFormat(+priceInner)}
               </p>
             </div>
             <div className="flex justify-end">
