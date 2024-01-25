@@ -1,5 +1,6 @@
 module.exports = {
   plugins: {
+    'tailwindcss/nesting': 'postcss-nesting',
     tailwindcss: {},
     autoprefixer: {},
     'postcss-px-to-viewport-8-plugin': {
@@ -16,5 +17,6 @@ module.exports = {
       exclude: [/node_modules/], // 设置忽略文件，用正则做目录名匹配
       landscape: false, // 是否处理横屏情况
     },
+
   },
 }

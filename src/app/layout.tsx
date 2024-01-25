@@ -1,4 +1,5 @@
 import './globals.css'
+import './discussion.css'
 import Script from 'next/script'
 
 export const metadata = {
