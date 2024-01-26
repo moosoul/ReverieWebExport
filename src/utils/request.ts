@@ -30,7 +30,10 @@ const retryConfig = {
 };
 
 const request = axios.create({
-  baseURL: "https://stylespace.revery.ai",
+  baseURL:
+    process.env.NODE_ENV === "development"
+      ? "http://3.215.49.239:5002"
+      : "https://stylespace.revery.ai",
   timeout: 60000,
 });
 
