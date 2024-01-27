@@ -1,0 +1,44 @@
+name: Deploy Next.js App
+
+on:
+  push:
+    branches:
+      - main  # 触发部署的分支，可以根据实际情况修改
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up SSH
+        uses: actions/checkout@v2
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ./deploy.key
+          sudo chmod 600 ./deploy.key
+          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+        shell: bash
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+          SSH_KNOWN_HOSTS: ${{secrets.SSH_KNOWN_HOSTS}}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18  # 使用你的 Node.js 版本
+      
+      # - name: Set up pnpm
+      #   run: npm install -g pnpm
+
+      - name: Set up pm2
+        run: npm install -g pm2
+
+      # - name: Install Dependencies
+      #   run: pnpm install
+
+      - name: Deploy to Production
+        env:
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          NEXT_PUBLIC_ANALYTICS_ID: ${{ secrets.NEXT_PUBLIC_ANALYTICS_ID }}
+          # 添加其他环境变量
+        run: pm2 deploy production  # 根据你的部署脚本或命令进行修改
